@@ -13,6 +13,7 @@ jobs:
       with:
         target-server: robotomono.com
         remote-user: ${{ secrets.FTP_USERNAME }}  # it's not a FTP connection, don't worry.
+        password: ${{ secrets.FTP_PASSWORD }}
         private-ssh-key: ${{ secrets.SSH_KEY }}
         destination-path: ${{ secrets.DEPLOY_PATH }}
         ssh-port: ${{ secrets.SSH_PORT }}
