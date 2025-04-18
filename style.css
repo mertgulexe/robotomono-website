@@ -39,6 +39,7 @@ main {
   align-items: center;
   text-align: center;
   margin: 20% auto;
+  max-width: 300px;;
   background-color: var(--light-blueish);
   padding: 20px 40px;
   border-radius: 20px;
