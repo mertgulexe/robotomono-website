@@ -15,4 +15,10 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        port: ${{ secrets.FTP_PORT }} # todo replace with your web hosts ftps port
+        port: ${{ secrets.FTP_PORT }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          LICENSE
+          README.md
