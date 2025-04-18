@@ -1,0 +1,18 @@
+on: push
+name: Website Deployment
+jobs:
+  web-deploy:
+    name: 🚀 Deploy Website Every Commit
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get Latest Code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync Files
+      uses: SamKirkland/web-deploy@v1
+      with:
+        target-server: robotomono.com
+        remote-user: ${{ secrets.FTP_USERNAME }}  # it's not a FTP connection, don't worry.
+        private-ssh-key: ${{ secrets.SSH_KEY }}
+        destination-path: ${{ secrets.DEPLOY_PATH }}
+        ssh-port: ${{ secrets.SSH_PORT }}
